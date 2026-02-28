@@ -9,4 +9,4 @@ No build step. Edit `firstpr.js`, `firstpr.css`, and `index.html` directly.
 
 ### Copyright ###
 
-Copyright (c) 2022 Andrew Nesbitt. See [LICENSE](LICENSE) for details.
+Copyright (c) 2026 Andrew Nesbitt. See [LICENSE](LICENSE) for details.
