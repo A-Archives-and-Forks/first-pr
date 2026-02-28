@@ -40,11 +40,11 @@ function normaliseLogin(input) {
   return m ? m[1] : input;
 }
 
-var main = $('#main');
+var main = document.getElementById('main');
 
 function render(html) {
-  main.html(html)
-  emojify.run($('#title')[0])
+  main.innerHTML = html;
+  emojify.run(document.getElementById('title'));
 }
 
 function renderFound(d) {
@@ -110,69 +110,75 @@ function renderRequestError() {
 function loadData(login, cb){
   if(login){
     ga('send', 'event', 'login', 'search', login);
-    var searchURL = 'https://api.github.com/search/issues?q=type:pr+author:"'+login+'"+-user:"'+login+'"&sort=created&order=asc&per_page=1'
-    $.getJSON(searchURL, function(data){
+    var searchURL = 'https://api.github.com/search/issues?q=type:pr+author:"'+login+'"+-user:"'+login+'"&sort=created&order=asc&per_page=1';
+    fetch(searchURL).then(function(r){ return r.json(); }).then(function(data){
       if(data.items.length > 0){
-        $.getJSON(data.items[0].pull_request.url, function(data){
-          cb(data)
-        }).error(function () {
-          render(renderRequestError())
-          flappyBoard()
-        })
+        fetch(data.items[0].pull_request.url).then(function(r){ return r.json(); }).then(function(data){
+          cb(data);
+        }).catch(function(){
+          render(renderRequestError());
+          flappyBoard();
+        });
       } else {
-        cb(null)
+        cb(null);
       }
-    }).error(function(){
-      render(renderError(login))
-      flappyBoard()
-    })
+    }).catch(function(){
+      render(renderError(login));
+      flappyBoard();
+    });
   }
 }
 
 function renderData(pullRequestData){
   if(pullRequestData){
-    render(renderFound(pullRequestData))
-    if(typeof twttr !== 'undefined'){twttr.widgets.load()}
-    $('.moment-date').each(function (index, dateElem) {
-      var $dateElem = $(dateElem);
-      var time = new Date($dateElem.attr('datetime'));
+    render(renderFound(pullRequestData));
+    if(typeof twttr !== 'undefined'){twttr.widgets.load();}
+    document.querySelectorAll('.moment-date').forEach(function(dateElem){
+      var time = new Date(dateElem.getAttribute('datetime'));
       var formatted = time.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit'});
-      $dateElem.attr('title', $dateElem.text() + " on " + formatted);
-      if($dateElem.hasClass('sent')){
-        $dateElem.attr('title', formatted);
-        $dateElem.text(timeAgo(time))
+      dateElem.setAttribute('title', dateElem.textContent + ' on ' + formatted);
+      if(dateElem.classList.contains('sent')){
+        dateElem.setAttribute('title', formatted);
+        dateElem.textContent = timeAgo(time);
       }
     });
   } else {
-    render(renderMissing(getLogin()))
+    render(renderMissing(getLogin()));
   }
-  flappyBoard()
+  flappyBoard();
 }
 
 function flappyBoard(){
-  $('#login').val(getLogin()).blur()
+  var login = document.getElementById('login');
+  login.value = getLogin();
+  login.blur();
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){
-      $('.result').removeClass('hidden').addClass('expanded')
+      document.querySelectorAll('.result').forEach(function(el){
+        el.classList.remove('hidden');
+        el.classList.add('expanded');
+      });
       setTimeout(function(){
-        $('.spinner').addClass('hide')
-      }, 500)
-    })
-  })
+        document.querySelectorAll('.spinner').forEach(function(el){
+          el.classList.add('hide');
+        });
+      }, 500);
+    });
+  });
 }
 
-$(function() {
-  $(window).on('hashchange',function(){
-    loadData(getLogin(), renderData)
+document.addEventListener('DOMContentLoaded', function(){
+  window.addEventListener('hashchange', function(){
+    loadData(getLogin(), renderData);
   });
-  
-  $('#user-form').submit(function(){
-    $('.spinner').removeClass('hide')
-    window.location.hash = ''
-    // normalise in case the user pasted a full profile URL
-    window.location.hash = normaliseLogin($('#login')[0].value)
-    return false
-  })
 
-  loadData(getLogin(), renderData)
+  document.getElementById('user-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.querySelector('.spinner').classList.remove('hide');
+    window.location.hash = '';
+    // normalise in case the user pasted a full profile URL
+    window.location.hash = normaliseLogin(document.getElementById('login').value);
+  });
+
+  loadData(getLogin(), renderData);
 });
