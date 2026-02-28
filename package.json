@@ -2,14 +2,10 @@
   "name": "first-pr",
   "version": "1.0.0",
   "description": "What was the first pull request you sent on GitHub?",
-  "main": "gulpfile.js",
   "engines": {
     "node": "20.9.0"
   },
-  "scripts": {
-    "build": "gulp build",
-    "test": "node test.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/andrew/first-pr.git"
@@ -23,14 +19,5 @@
     "url": "https://github.com/andrew/first-pr/issues"
   },
   "homepage": "https://github.com/andrew/first-pr",
-  "devDependencies": {
-    "gulp": "^5.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2",
-    "tape": "^5.9.0",
-    "glob-parent": ">=5.1.2"
-  },
-  "overrides": {
-    "graceful-fs": "^4.2.9"
-  }
+  "devDependencies": {}
 }

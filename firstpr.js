@@ -1,1 +1,178 @@
-function timeAgo(e){for(var a=Math.floor((new Date-e)/1e3),t=new Intl.RelativeTimeFormat("en",{numeric:"auto"}),r=[{unit:"year",seconds:31536e3},{unit:"month",seconds:2592e3},{unit:"day",seconds:86400},{unit:"hour",seconds:3600},{unit:"minute",seconds:60},{unit:"second",seconds:1}],o=0;o<r.length;o++){var n=Math.floor(a/r[o].seconds);if(1<=n)return t.format(-n,r[o].unit)}return t.format(0,"second")}function getLogin(){return normaliseLogin(window.location.hash.slice(1))}function normaliseLogin(e){var a=(e=(e||"").trim()).match(/github\.com\/([^\/?#\s]+)/i);return a?a[1]:e}((e,a,t,r,o,n)=>{e.GoogleAnalyticsObject=r,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=+new Date,o=a.createElement(t),n=a.getElementsByTagName(t)[0],o.async=1,o.src="//www.google-analytics.com/analytics.js",n.parentNode.insertBefore(o,n)})(window,document,"script","ga"),ga("create","UA-265870-35","firstpr.me"),ga("send","pageview"),(e=>{_=e.window.document,a="+1,-1,100,109,1234,8ball,a,ab,abc,abcd,accept,aerial_tramway,airplane,alarm_clock,alien,ambulance,anchor,angel,anger,angry,anguished,ant,apple,aquarius,aries,arrow_backward,arrow_double_down,arrow_double_up,arrow_down,arrow_down_small,arrow_forward,arrow_heading_down,arrow_heading_up,arrow_left,arrow_lower_left,arrow_lower_right,arrow_right,arrow_right_hook,arrow_up,arrow_up_down,arrow_up_small,arrow_upper_left,arrow_upper_right,arrows_clockwise,arrows_counterclockwise,art,articulated_lorry,astonished,atm,b,baby,baby_bottle,baby_chick,baby_symbol,baggage_claim,balloon,ballot_box_with_check,bamboo,banana,bangbang,bank,bar_chart,barber,baseball,basketball,bath,bathtub,battery,bear,bee,beer,beers,beetle,beginner,bell,bento,bicyclist,bike,bikini,bird,birthday,black_circle,black_joker,black_nib,black_square,black_square_button,blossom,blowfish,blue_book,blue_car,blue_heart,blush,boar,boat,bomb,book,bookmark,bookmark_tabs,books,boom,boot,bouquet,bow,bowling,bowtie,boy,bread,bride_with_veil,bridge_at_night,briefcase,broken_heart,bug,bulb,bullettrain_front,bullettrain_side,bus,busstop,bust_in_silhouette,busts_in_silhouette,cactus,cake,calendar,calling,camel,camera,cancer,candy,capital_abcd,capricorn,car,card_index,carousel_horse,cat,cat2,cd,chart,chart_with_downwards_trend,chart_with_upwards_trend,checkered_flag,cherries,cherry_blossom,chestnut,chicken,children_crossing,chocolate_bar,christmas_tree,church,cinema,circus_tent,city_sunrise,city_sunset,cl,clap,clapper,clipboard,clock1,clock10,clock1030,clock11,clock1130,clock12,clock1230,clock130,clock2,clock230,clock3,clock330,clock4,clock430,clock5,clock530,clock6,clock630,clock7,clock730,clock8,clock830,clock9,clock930,closed_book,closed_lock_with_key,closed_umbrella,cloud,clubs,cn,cocktail,coffee,cold_sweat,collision,computer,confetti_ball,confounded,confused,congratulations,construction,construction_worker,convenience_store,cookie,cool,cop,copyright,corn,couple,couple_with_heart,couplekiss,cow,cow2,credit_card,crocodile,crossed_flags,crown,cry,crying_cat_face,crystal_ball,cupid,curly_loop,currency_exchange,curry,custard,customs,cyclone,dancer,dancers,dango,dart,dash,date,de,deciduous_tree,department_store,diamond_shape_with_a_dot_inside,diamonds,disappointed,disappointed_relieved,dizzy,dizzy_face,do_not_litter,dog,dog2,dollar,dolls,dolphin,donut,door,doughnut,dragon,dragon_face,dress,dromedary_camel,droplet,dvd,e-mail,ear,ear_of_rice,earth_africa,earth_americas,earth_asia,egg,eggplant,eight,eight_pointed_black_star,eight_spoked_asterisk,electric_plug,elephant,email,end,envelope,es,euro,european_castle,european_post_office,evergreen_tree,exclamation,expressionless,eyeglasses,eyes,facepunch,factory,fallen_leaf,family,fast_forward,fax,fearful,feelsgood,feet,ferris_wheel,file_folder,finnadie,fire,fire_engine,fireworks,first_quarter_moon,first_quarter_moon_with_face,fish,fish_cake,fishing_pole_and_fish,fist,five,flags,flashlight,floppy_disk,flower_playing_cards,flushed,foggy,football,fork_and_knife,fountain,four,four_leaf_clover,fr,free,fried_shrimp,fries,frog,frowning,fu,fuelpump,full_moon,full_moon_with_face,game_die,gb,gem,gemini,ghost,gift,gift_heart,girl,globe_with_meridians,goat,goberserk,godmode,golf,grapes,green_apple,green_book,green_heart,grey_exclamation,grey_question,grimacing,grin,grinning,guardsman,guitar,gun,haircut,hamburger,hammer,hamster,hand,handbag,hankey,hash,hatched_chick,hatching_chick,headphones,hear_no_evil,heart,heart_decoration,heart_eyes,heart_eyes_cat,heartbeat,heartpulse,hearts,heavy_check_mark,heavy_division_sign,heavy_dollar_sign,heavy_exclamation_mark,heavy_minus_sign,heavy_multiplication_x,heavy_plus_sign,helicopter,herb,hibiscus,high_brightness,high_heel,hocho,honey_pot,honeybee,horse,horse_racing,hospital,hotel,hotsprings,hourglass,hourglass_flowing_sand,house,house_with_garden,hurtrealbad,hushed,ice_cream,icecream,id,ideograph_advantage,imp,inbox_tray,incoming_envelope,information_desk_person,information_source,innocent,interrobang,iphone,it,izakaya_lantern,jack_o_lantern,japan,japanese_castle,japanese_goblin,japanese_ogre,jeans,joy,joy_cat,jp,key,keycap_ten,kimono,kiss,kissing,kissing_cat,kissing_closed_eyes,kissing_face,kissing_heart,kissing_smiling_eyes,koala,koko,kr,large_blue_circle,large_blue_diamond,large_orange_diamond,last_quarter_moon,last_quarter_moon_with_face,laughing,leaves,ledger,left_luggage,left_right_arrow,leftwards_arrow_with_hook,lemon,leo,leopard,libra,light_rail,link,lips,lipstick,lock,lock_with_ink_pen,lollipop,loop,loudspeaker,love_hotel,love_letter,low_brightness,m,mag,mag_right,mahjong,mailbox,mailbox_closed,mailbox_with_mail,mailbox_with_no_mail,man,man_with_gua_pi_mao,man_with_turban,mans_shoe,maple_leaf,mask,massage,meat_on_bone,mega,melon,memo,mens,metal,metro,microphone,microscope,milky_way,minibus,minidisc,mobile_phone_off,money_with_wings,moneybag,monkey,monkey_face,monorail,moon,mortar_board,mount_fuji,mountain_bicyclist,mountain_cableway,mountain_railway,mouse,mouse2,movie_camera,moyai,muscle,mushroom,musical_keyboard,musical_note,musical_score,mute,nail_care,name_badge,neckbeard,necktie,negative_squared_cross_mark,neutral_face,new,new_moon,new_moon_with_face,newspaper,ng,nine,no_bell,no_bicycles,no_entry,no_entry_sign,no_good,no_mobile_phones,no_mouth,no_pedestrians,no_smoking,non-potable_water,nose,notebook,notebook_with_decorative_cover,notes,nut_and_bolt,o,o2,ocean,octocat,octopus,oden,office,ok,ok_hand,ok_woman,older_man,older_woman,on,oncoming_automobile,oncoming_bus,oncoming_police_car,oncoming_taxi,one,open_file_folder,open_hands,open_mouth,ophiuchus,orange_book,outbox_tray,ox,page_facing_up,page_with_curl,pager,palm_tree,panda_face,paperclip,parking,part_alternation_mark,partly_sunny,passport_control,paw_prints,peach,pear,pencil,pencil2,penguin,pensive,performing_arts,persevere,person_frowning,person_with_blond_hair,person_with_pouting_face,phone,pig,pig2,pig_nose,pill,pineapple,pisces,pizza,plus1,point_down,point_left,point_right,point_up,point_up_2,police_car,poodle,poop,post_office,postal_horn,postbox,potable_water,pouch,poultry_leg,pound,pouting_cat,pray,princess,punch,purple_heart,purse,pushpin,put_litter_in_its_place,question,rabbit,rabbit2,racehorse,radio,radio_button,rage,rage1,rage2,rage3,rage4,railway_car,rainbow,raised_hand,raised_hands,raising_hand,ram,ramen,rat,recycle,red_car,red_circle,registered,relaxed,relieved,repeat,repeat_one,restroom,revolving_hearts,rewind,ribbon,rice,rice_ball,rice_cracker,rice_scene,ring,rocket,roller_coaster,rooster,rose,rotating_light,round_pushpin,rowboat,ru,rugby_football,runner,running,running_shirt_with_sash,sa,sagittarius,sailboat,sake,sandal,santa,satellite,satisfied,saxophone,school,school_satchel,scissors,scorpius,scream,scream_cat,scroll,seat,secret,see_no_evil,seedling,seven,shaved_ice,sheep,shell,ship,shipit,shirt,shit,shoe,shower,signal_strength,six,six_pointed_star,ski,skull,sleeping,sleepy,slot_machine,small_blue_diamond,small_orange_diamond,small_red_triangle,small_red_triangle_down,smile,smile_cat,smiley,smiley_cat,smiling_imp,smirk,smirk_cat,smoking,snail,snake,snowboarder,snowflake,snowman,sob,soccer,soon,sos,sound,space_invader,spades,spaghetti,sparkler,sparkles,sparkling_heart,speak_no_evil,speaker,speech_balloon,speedboat,squirrel,star,star2,stars,station,statue_of_liberty,steam_locomotive,stew,straight_ruler,strawberry,stuck_out_tongue,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,sun_with_face,sunflower,sunglasses,sunny,sunrise,sunrise_over_mountains,surfer,sushi,suspect,suspension_railway,sweat,sweat_drops,sweat_smile,sweet_potato,swimmer,symbols,syringe,tada,tanabata_tree,tangerine,taurus,taxi,tea,telephone,telephone_receiver,telescope,tennis,tent,thought_balloon,three,thumbsdown,thumbsup,ticket,tiger,tiger2,tired_face,tm,toilet,tokyo_tower,tomato,tongue,top,tophat,tractor,traffic_light,train,train2,tram,triangular_flag_on_post,triangular_ruler,trident,triumph,trolleybus,trollface,trophy,tropical_drink,tropical_fish,truck,trumpet,tshirt,tulip,turtle,tv,twisted_rightwards_arrows,two,two_hearts,two_men_holding_hands,two_women_holding_hands,u5272,u5408,u55b6,u6307,u6708,u6709,u6e80,u7121,u7533,u7981,u7a7a,uk,umbrella,unamused,underage,unlock,up,us,v,vertical_traffic_light,vhs,vibration_mode,video_camera,video_game,violin,virgo,volcano,vs,walking,waning_crescent_moon,waning_gibbous_moon,warning,watch,water_buffalo,watermelon,wave,wavy_dash,waxing_crescent_moon,waxing_gibbous_moon,wc,weary,wedding,whale,whale2,wheelchair,white_check_mark,white_circle,white_flower,white_square,white_square_button,wind_chime,wine_glass,wink,wink2,wolf,woman,womans_clothes,womans_hat,womens,worried,wrench,x,yellow_heart,yen,yum,zap,zero,zzz".split(/,/),r=a.reduce(function(e,a){return e[a]=!0,e},{}),t={named:/:([a-z0-9A-Z_-]+):/,blush:/:-?\)/g,scream:/:-o/gi,smirk:/[:;]-?]/g,smiley:/[:;]-?d/gi,stuck_out_tongue_closed_eyes:/x-d/gi,stuck_out_tongue_winking_eye:/[:;]-?p/gi,rage:/:-?[\[@]/g,disappointed:/:-?\(/g,sob:/:['']-?\(|:&#x27;\(/g,kissing_heart:/:-?\*/g,wink:/;-?\)/g,pensive:/:-?\//g,confounded:/:-?s/gi,flushed:/:-?\|/g,relaxed:/:-?\$/g,mask:/:-x/gi,heart:/<3|&lt;3/g,broken_heart:/<\/3|&lt;&#x2F;3/g,thumbsup:/:\+1:/g,thumbsdown:/:\-1:/g},o=Object.keys(t).map(function(e){return[t[e],e]}),n=o.map(function(e){e=e[0];return"("+(e.source||e).replace(/(^|[^\[])\^/g,"$1")+")"}).join("|"),c=new RegExp(n,"gi"),u={emojify_tag_type:"div",only_crawl_id:null,img_dir:"images/emoji",ignored_tags:{SCRIPT:1,TEXTAREA:1,A:1,PRE:1,CODE:1}},g.prototype={validate:function(e,a,t){function r(){return n.lastEmojiTerminatedAt=o+a,i}var o,n=this,i=d(e);if(i)return e=e[0],o=e.length,2<e.length||0===a||t.length===e.length+a||s(t.charAt(a-1))||s(t.charAt(e.length+a))||this.lastEmojiTerminatedAt===a?r():void 0}};var _,a,r,t,o,n,c,u,i={defaultConfig:u,emojiNames:a,setConfig:function(a){Object.keys(u).forEach(function(e){e in a&&(u[e]=a[e])})},replace:function(e,a){if(!e)return e;a=a||l;var t=new g;return e.replace(c,function(){var e=Array.prototype.slice.call(arguments,0,-2),e=t.validate(e,arguments[arguments.length-2],arguments[arguments.length-1]);return e?a(arguments[0],e):arguments[0]})},run:function(e){void 0===e&&(e=u.only_crawl_id?_.getElementById(u.only_crawl_id):_.body);for(var a,t=u.ignored_tags,r=_.createTreeWalker(e,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,function(e){return 1!==e.nodeType?NodeFilter.FILTER_ACCEPT:t[e.tagName]||e.classList.contains("no-emojify")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_SKIP},!1),o=[];null!==(a=r.nextNode());)o.push(a);o.forEach(function(e){for(var a,t=[],r=new g;null!==(a=c.exec(e.data));)r.validate(a,a.index,a.input)&&t.push(a);for(var o,n,i,s=t.length;0<s--;){var l=d(t[s]);o=e,n=t[s],l=l,i=void 0,(i=_.createElement("img")).setAttribute("title",":"+l+":"),i.setAttribute("alt",":"+l+":"),i.setAttribute("class","emoji"),i.setAttribute("src",u.img_dir+"/"+l+".png"),i.setAttribute("align","absmiddle"),o.splitText(n.index),o.nextSibling.nodeValue=o.nextSibling.nodeValue.substr(n[0].length,o.nextSibling.nodeValue.length),i.appendChild(o.splitText(n.index)),o.parentNode.insertBefore(i,o.nextSibling)}})}};function s(e){return" "===e||"\t"===e||"\r"===e||"\n"===e||""===e}function d(e){if(e[1]&&e[2]){var a=e[2];if(r[a])return a}else for(var t=3;t<e.length-1;t++)if(e[t])return o[t-2][1]}function l(e,a){return"<img title=':"+a+":' alt=':"+a+":' class='emoji' src='"+u.img_dir+"/"+a+".png' align='absmiddle' />"}function g(){this.lastEmojiTerminatedAt=-1}e.emojify=i,"function"==typeof define&&define.amd&&define([],function(){return i})})(this);var main=$("#main");function render(e){main.html(e),emojify.run($("#title")[0])}function renderFound(e){var a=e.merged?'<time class="state merged moment-date" datetime="'+e.merged_at+'" is="relative-time" title="'+e.merged_at+'">Merged</time>':e.closed_at?'<time class="state closed moment-date" datetime="'+e.closed_at+'" is="relative-time" title="'+e.closed_at+'">Closed</time>':'<span class="state open">Open</span>';return'<div class="results-wrapper"><div class="result hidden found cf"><h2 id="pr-title"><a href="'+e.html_url+'" id="title" target="_blank">'+e.title+'</a> <span class="pr-number">#'+e.number+'</span><br><small>to <a href="'+e.base.repo.html_url+'" target="_blank">'+e.base.repo.full_name+'</a></small></h2><div class="user-media"><a class="avatar" href="'+e.user.html_url+'" target="_blank"><img src="'+e.user.avatar_url+'" width="48" height="48" /></a><div class="pr-dates"><p class="sent-on"><a href="'+e.user.html_url+'">'+e.user.login+'</a> sent this pull request <time class="moment-date sent" datetime="'+e.created_at+'" is="relative-time" title="'+e.created_at+'">'+e.created_at+"</time></p><p>"+a+'</p></div></div></div></div><div id="all-results"><a href="https://github.com/search?q=author%3A'+e.user.login+'&type=pullrequests&s=created&o=asc" target="_blank">See every pull request</a> by <a href="'+e.user.html_url+'">'+e.user.login+"</a></div>"}function renderMissing(e){return'<div class="results-wrapper"><div class="result hidden missing"><h2>It doesn\'t look like <a href="https://github.com/'+e+'">'+e+'</a> has sent a pull request yet.</h2><p><strong>Need help sending your first pull request?</strong> Check out <a href="https://opensource.guide/how-to-contribute/">this handy guide.</a></p></div></div>'}function renderError(e){return'<div class="results-wrapper"><div class="result hidden error"><h2><b>'+e+"</b> doesn't appear to be on GitHub at all.</h2></div></div>"}function renderRequestError(){return'<div class="results-wrapper"><div class="result hidden error"><h2>There\'s been a problem getting the information from <b>GitHub</b>. Please try again later.</h2></div></div>'}function loadData(e,a){e&&(ga("send","event","login","search",e),$.getJSON('https://api.github.com/search/issues?q=type:pr+author:"'+e+'"+-user:"'+e+'"&sort=created&order=asc&per_page=1',function(e){0<e.items.length?$.getJSON(e.items[0].pull_request.url,function(e){a(e)}).error(function(){render(renderRequestError()),flappyBoard()}):a(null)}).error(function(){render(renderError(e)),flappyBoard()}))}function renderData(e){e?(render(renderFound(e)),"undefined"!=typeof twttr&&twttr.widgets.load(),$(".moment-date").each(function(e,a){var a=$(a),t=new Date(a.attr("datetime")),r=t.toLocaleString("en-US",{year:"numeric",month:"long",day:"numeric",hour:"numeric",minute:"2-digit"});a.attr("title",a.text()+" on "+r),a.hasClass("sent")&&(a.attr("title",r),a.text(timeAgo(t)))})):render(renderMissing(getLogin())),flappyBoard()}function flappyBoard(){$("#login").val(getLogin()).blur(),requestAnimationFrame(function(){requestAnimationFrame(function(){$(".result").removeClass("hidden").addClass("expanded"),setTimeout(function(){$(".spinner").addClass("hide")},500)})})}$(function(){$(window).on("hashchange",function(){loadData(getLogin(),renderData)}),$("#user-form").submit(function(){return $(".spinner").removeClass("hide"),window.location.hash="",window.location.hash=normaliseLogin($("#login")[0].value),!1}),loadData(getLogin(),renderData)});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-265870-35', 'firstpr.me');
+ga('send', 'pageview');
+
+/*! emojify.js - v0.9.1 - Copyright (c) Hassan Khan 2014 */
+!function(a){var b=function(){function b(a){return" "===a||"	"===a||"\r"===a||"\n"===a||""===a}function c(a,b,c){var d=i.createElement("img");d.setAttribute("title",":"+c+":"),d.setAttribute("alt",":"+c+":"),d.setAttribute("class","emoji"),d.setAttribute("src",q.img_dir+"/"+c+".png"),d.setAttribute("align","absmiddle"),a.splitText(b.index),a.nextSibling.nodeValue=a.nextSibling.nodeValue.substr(b[0].length,a.nextSibling.nodeValue.length),d.appendChild(a.splitText(b.index)),a.parentNode.insertBefore(d,a.nextSibling)}function d(a){if(a[1]&&a[2]){var b=a[2];if(l[b])return b}else for(var c=3;c<a.length-1;c++)if(a[c])return n[c-2][1]}function e(a,b){return"<img title=':"+b+":' alt=':"+b+":' class='emoji' src='"+q.img_dir+"/"+b+".png' align='absmiddle' />"}function f(){this.lastEmojiTerminatedAt=-1}function g(a,b){if(!a)return a;b||(b=e);var c=new f;return a.replace(p,function(){var a=Array.prototype.slice.call(arguments,0,-2),d=arguments[arguments.length-2],e=arguments[arguments.length-1],f=c.validate(a,d,e);return f?b(arguments[0],f):arguments[0]})}function h(a){"undefined"==typeof a&&(a=q.only_crawl_id?i.getElementById(q.only_crawl_id):i.body);for(var b,e=q.ignored_tags,g=i.createTreeWalker(a,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,function(a){return 1!==a.nodeType?NodeFilter.FILTER_ACCEPT:e[a.tagName]||a.classList.contains("no-emojify")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_SKIP},!1),h=[];null!==(b=g.nextNode());)h.push(b);h.forEach(function(a){for(var b,e=[],g=new f;null!==(b=p.exec(a.data));)g.validate(b,b.index,b.input)&&e.push(b);for(var h=e.length;h-->0;){var i=d(e[h]);c(a,e[h],i)}})}var i=a.window.document,j="+1,-1,100,109,1234,8ball,a,ab,abc,abcd,accept,aerial_tramway,airplane,alarm_clock,alien,ambulance,anchor,angel,anger,angry,anguished,ant,apple,aquarius,aries,arrow_backward,arrow_double_down,arrow_double_up,arrow_down,arrow_down_small,arrow_forward,arrow_heading_down,arrow_heading_up,arrow_left,arrow_lower_left,arrow_lower_right,arrow_right,arrow_right_hook,arrow_up,arrow_up_down,arrow_up_small,arrow_upper_left,arrow_upper_right,arrows_clockwise,arrows_counterclockwise,art,articulated_lorry,astonished,atm,b,baby,baby_bottle,baby_chick,baby_symbol,baggage_claim,balloon,ballot_box_with_check,bamboo,banana,bangbang,bank,bar_chart,barber,baseball,basketball,bath,bathtub,battery,bear,bee,beer,beers,beetle,beginner,bell,bento,bicyclist,bike,bikini,bird,birthday,black_circle,black_joker,black_nib,black_square,black_square_button,blossom,blowfish,blue_book,blue_car,blue_heart,blush,boar,boat,bomb,book,bookmark,bookmark_tabs,books,boom,boot,bouquet,bow,bowling,bowtie,boy,bread,bride_with_veil,bridge_at_night,briefcase,broken_heart,bug,bulb,bullettrain_front,bullettrain_side,bus,busstop,bust_in_silhouette,busts_in_silhouette,cactus,cake,calendar,calling,camel,camera,cancer,candy,capital_abcd,capricorn,car,card_index,carousel_horse,cat,cat2,cd,chart,chart_with_downwards_trend,chart_with_upwards_trend,checkered_flag,cherries,cherry_blossom,chestnut,chicken,children_crossing,chocolate_bar,christmas_tree,church,cinema,circus_tent,city_sunrise,city_sunset,cl,clap,clapper,clipboard,clock1,clock10,clock1030,clock11,clock1130,clock12,clock1230,clock130,clock2,clock230,clock3,clock330,clock4,clock430,clock5,clock530,clock6,clock630,clock7,clock730,clock8,clock830,clock9,clock930,closed_book,closed_lock_with_key,closed_umbrella,cloud,clubs,cn,cocktail,coffee,cold_sweat,collision,computer,confetti_ball,confounded,confused,congratulations,construction,construction_worker,convenience_store,cookie,cool,cop,copyright,corn,couple,couple_with_heart,couplekiss,cow,cow2,credit_card,crocodile,crossed_flags,crown,cry,crying_cat_face,crystal_ball,cupid,curly_loop,currency_exchange,curry,custard,customs,cyclone,dancer,dancers,dango,dart,dash,date,de,deciduous_tree,department_store,diamond_shape_with_a_dot_inside,diamonds,disappointed,disappointed_relieved,dizzy,dizzy_face,do_not_litter,dog,dog2,dollar,dolls,dolphin,donut,door,doughnut,dragon,dragon_face,dress,dromedary_camel,droplet,dvd,e-mail,ear,ear_of_rice,earth_africa,earth_americas,earth_asia,egg,eggplant,eight,eight_pointed_black_star,eight_spoked_asterisk,electric_plug,elephant,email,end,envelope,es,euro,european_castle,european_post_office,evergreen_tree,exclamation,expressionless,eyeglasses,eyes,facepunch,factory,fallen_leaf,family,fast_forward,fax,fearful,feelsgood,feet,ferris_wheel,file_folder,finnadie,fire,fire_engine,fireworks,first_quarter_moon,first_quarter_moon_with_face,fish,fish_cake,fishing_pole_and_fish,fist,five,flags,flashlight,floppy_disk,flower_playing_cards,flushed,foggy,football,fork_and_knife,fountain,four,four_leaf_clover,fr,free,fried_shrimp,fries,frog,frowning,fu,fuelpump,full_moon,full_moon_with_face,game_die,gb,gem,gemini,ghost,gift,gift_heart,girl,globe_with_meridians,goat,goberserk,godmode,golf,grapes,green_apple,green_book,green_heart,grey_exclamation,grey_question,grimacing,grin,grinning,guardsman,guitar,gun,haircut,hamburger,hammer,hamster,hand,handbag,hankey,hash,hatched_chick,hatching_chick,headphones,hear_no_evil,heart,heart_decoration,heart_eyes,heart_eyes_cat,heartbeat,heartpulse,hearts,heavy_check_mark,heavy_division_sign,heavy_dollar_sign,heavy_exclamation_mark,heavy_minus_sign,heavy_multiplication_x,heavy_plus_sign,helicopter,herb,hibiscus,high_brightness,high_heel,hocho,honey_pot,honeybee,horse,horse_racing,hospital,hotel,hotsprings,hourglass,hourglass_flowing_sand,house,house_with_garden,hurtrealbad,hushed,ice_cream,icecream,id,ideograph_advantage,imp,inbox_tray,incoming_envelope,information_desk_person,information_source,innocent,interrobang,iphone,it,izakaya_lantern,jack_o_lantern,japan,japanese_castle,japanese_goblin,japanese_ogre,jeans,joy,joy_cat,jp,key,keycap_ten,kimono,kiss,kissing,kissing_cat,kissing_closed_eyes,kissing_face,kissing_heart,kissing_smiling_eyes,koala,koko,kr,large_blue_circle,large_blue_diamond,large_orange_diamond,last_quarter_moon,last_quarter_moon_with_face,laughing,leaves,ledger,left_luggage,left_right_arrow,leftwards_arrow_with_hook,lemon,leo,leopard,libra,light_rail,link,lips,lipstick,lock,lock_with_ink_pen,lollipop,loop,loudspeaker,love_hotel,love_letter,low_brightness,m,mag,mag_right,mahjong,mailbox,mailbox_closed,mailbox_with_mail,mailbox_with_no_mail,man,man_with_gua_pi_mao,man_with_turban,mans_shoe,maple_leaf,mask,massage,meat_on_bone,mega,melon,memo,mens,metal,metro,microphone,microscope,milky_way,minibus,minidisc,mobile_phone_off,money_with_wings,moneybag,monkey,monkey_face,monorail,moon,mortar_board,mount_fuji,mountain_bicyclist,mountain_cableway,mountain_railway,mouse,mouse2,movie_camera,moyai,muscle,mushroom,musical_keyboard,musical_note,musical_score,mute,nail_care,name_badge,neckbeard,necktie,negative_squared_cross_mark,neutral_face,new,new_moon,new_moon_with_face,newspaper,ng,nine,no_bell,no_bicycles,no_entry,no_entry_sign,no_good,no_mobile_phones,no_mouth,no_pedestrians,no_smoking,non-potable_water,nose,notebook,notebook_with_decorative_cover,notes,nut_and_bolt,o,o2,ocean,octocat,octopus,oden,office,ok,ok_hand,ok_woman,older_man,older_woman,on,oncoming_automobile,oncoming_bus,oncoming_police_car,oncoming_taxi,one,open_file_folder,open_hands,open_mouth,ophiuchus,orange_book,outbox_tray,ox,page_facing_up,page_with_curl,pager,palm_tree,panda_face,paperclip,parking,part_alternation_mark,partly_sunny,passport_control,paw_prints,peach,pear,pencil,pencil2,penguin,pensive,performing_arts,persevere,person_frowning,person_with_blond_hair,person_with_pouting_face,phone,pig,pig2,pig_nose,pill,pineapple,pisces,pizza,plus1,point_down,point_left,point_right,point_up,point_up_2,police_car,poodle,poop,post_office,postal_horn,postbox,potable_water,pouch,poultry_leg,pound,pouting_cat,pray,princess,punch,purple_heart,purse,pushpin,put_litter_in_its_place,question,rabbit,rabbit2,racehorse,radio,radio_button,rage,rage1,rage2,rage3,rage4,railway_car,rainbow,raised_hand,raised_hands,raising_hand,ram,ramen,rat,recycle,red_car,red_circle,registered,relaxed,relieved,repeat,repeat_one,restroom,revolving_hearts,rewind,ribbon,rice,rice_ball,rice_cracker,rice_scene,ring,rocket,roller_coaster,rooster,rose,rotating_light,round_pushpin,rowboat,ru,rugby_football,runner,running,running_shirt_with_sash,sa,sagittarius,sailboat,sake,sandal,santa,satellite,satisfied,saxophone,school,school_satchel,scissors,scorpius,scream,scream_cat,scroll,seat,secret,see_no_evil,seedling,seven,shaved_ice,sheep,shell,ship,shipit,shirt,shit,shoe,shower,signal_strength,six,six_pointed_star,ski,skull,sleeping,sleepy,slot_machine,small_blue_diamond,small_orange_diamond,small_red_triangle,small_red_triangle_down,smile,smile_cat,smiley,smiley_cat,smiling_imp,smirk,smirk_cat,smoking,snail,snake,snowboarder,snowflake,snowman,sob,soccer,soon,sos,sound,space_invader,spades,spaghetti,sparkler,sparkles,sparkling_heart,speak_no_evil,speaker,speech_balloon,speedboat,squirrel,star,star2,stars,station,statue_of_liberty,steam_locomotive,stew,straight_ruler,strawberry,stuck_out_tongue,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,sun_with_face,sunflower,sunglasses,sunny,sunrise,sunrise_over_mountains,surfer,sushi,suspect,suspension_railway,sweat,sweat_drops,sweat_smile,sweet_potato,swimmer,symbols,syringe,tada,tanabata_tree,tangerine,taurus,taxi,tea,telephone,telephone_receiver,telescope,tennis,tent,thought_balloon,three,thumbsdown,thumbsup,ticket,tiger,tiger2,tired_face,tm,toilet,tokyo_tower,tomato,tongue,top,tophat,tractor,traffic_light,train,train2,tram,triangular_flag_on_post,triangular_ruler,trident,triumph,trolleybus,trollface,trophy,tropical_drink,tropical_fish,truck,trumpet,tshirt,tulip,turtle,tv,twisted_rightwards_arrows,two,two_hearts,two_men_holding_hands,two_women_holding_hands,u5272,u5408,u55b6,u6307,u6708,u6709,u6e80,u7121,u7533,u7981,u7a7a,uk,umbrella,unamused,underage,unlock,up,us,v,vertical_traffic_light,vhs,vibration_mode,video_camera,video_game,violin,virgo,volcano,vs,walking,waning_crescent_moon,waning_gibbous_moon,warning,watch,water_buffalo,watermelon,wave,wavy_dash,waxing_crescent_moon,waxing_gibbous_moon,wc,weary,wedding,whale,whale2,wheelchair,white_check_mark,white_circle,white_flower,white_square,white_square_button,wind_chime,wine_glass,wink,wink2,wolf,woman,womans_clothes,womans_hat,womens,worried,wrench,x,yellow_heart,yen,yum,zap,zero,zzz",k=j.split(/,/),l=k.reduce(function(a,b){return a[b]=!0,a},{}),m={named:/:([a-z0-9A-Z_-]+):/,blush:/:-?\)/g,scream:/:-o/gi,smirk:/[:;]-?]/g,smiley:/[:;]-?d/gi,stuck_out_tongue_closed_eyes:/x-d/gi,stuck_out_tongue_winking_eye:/[:;]-?p/gi,rage:/:-?[\[@]/g,disappointed:/:-?\(/g,sob:/:['']-?\(|:&#x27;\(/g,kissing_heart:/:-?\*/g,wink:/;-?\)/g,pensive:/:-?\//g,confounded:/:-?s/gi,flushed:/:-?\|/g,relaxed:/:-?\$/g,mask:/:-x/gi,heart:/<3|&lt;3/g,broken_heart:/<\/3|&lt;&#x2F;3/g,thumbsup:/:\+1:/g,thumbsdown:/:\-1:/g},n=Object.keys(m).map(function(a){return[m[a],a]}),o=n.map(function(a){var b=a[0],c=b.source||b;return c=c.replace(/(^|[^\[])\^/g,"$1"),"("+c+")"}).join("|"),p=new RegExp(o,"gi"),q={emojify_tag_type:"div",only_crawl_id:null,img_dir:"images/emoji",ignored_tags:{SCRIPT:1,TEXTAREA:1,A:1,PRE:1,CODE:1}};return f.prototype={validate:function(a,c,e){function f(){return g.lastEmojiTerminatedAt=j+c,h}var g=this,h=d(a);if(h){var i=a[0],j=i.length;return i.length>2?f():0===c?f():e.length===i.length+c?f():b(e.charAt(c-1))?f():b(e.charAt(i.length+c))?f():this.lastEmojiTerminatedAt===c?f():void 0}}},{defaultConfig:q,emojiNames:k,setConfig:function(a){Object.keys(q).forEach(function(b){b in a&&(q[b]=a[b])})},replace:g,run:h}}();return a.emojify=b,"function"==typeof define&&define.amd&&define([],function(){return b}),b}(this);
+
+function timeAgo(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+  var rtf = new Intl.RelativeTimeFormat('en', {numeric: 'auto'});
+  var intervals = [
+    {unit: 'year', seconds: 31536000},
+    {unit: 'month', seconds: 2592000},
+    {unit: 'day', seconds: 86400},
+    {unit: 'hour', seconds: 3600},
+    {unit: 'minute', seconds: 60},
+    {unit: 'second', seconds: 1}
+  ];
+  for (var i = 0; i < intervals.length; i++) {
+    var count = Math.floor(seconds / intervals[i].seconds);
+    if (count >= 1) return rtf.format(-count, intervals[i].unit);
+  }
+  return rtf.format(0, 'second');
+}
+
+function getLogin(){
+  return normaliseLogin(window.location.hash.slice(1));
+}
+
+// normalize user input so we accept either a bare login or a
+// full github.com profile URL.  If the value looks like a URL we
+// strip everything except the username part.
+function normaliseLogin(input) {
+  input = (input || '').trim();
+  var m = input.match(/github\.com\/([^\/?#\s]+)/i);
+  return m ? m[1] : input;
+}
+
+var main = $('#main');
+
+function render(html) {
+  main.html(html)
+  emojify.run($('#title')[0])
+}
+
+function renderFound(d) {
+  var state;
+  if (d.merged) {
+    state = '<time class="state merged moment-date" datetime="' + d.merged_at + '" is="relative-time" title="' + d.merged_at + '">Merged</time>';
+  } else if (d.closed_at) {
+    state = '<time class="state closed moment-date" datetime="' + d.closed_at + '" is="relative-time" title="' + d.closed_at + '">Closed</time>';
+  } else {
+    state = '<span class="state open">Open</span>';
+  }
+
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden found cf">' +
+      '<h2 id="pr-title">' +
+        '<a href="' + d.html_url + '" id="title" target="_blank">' + d.title + '</a> <span class="pr-number">#' + d.number + '</span><br>' +
+        '<small>to <a href="' + d.base.repo.html_url + '" target="_blank">' + d.base.repo.full_name + '</a></small>' +
+      '</h2>' +
+      '<div class="user-media">' +
+        '<a class="avatar" href="' + d.user.html_url + '" target="_blank">' +
+          '<img src="' + d.user.avatar_url + '" width="48" height="48" />' +
+        '</a>' +
+        '<div class="pr-dates">' +
+          '<p class="sent-on">' +
+            '<a href="' + d.user.html_url + '">' + d.user.login + '</a> sent this pull request ' +
+            '<time class="moment-date sent" datetime="' + d.created_at + '" is="relative-time" title="' + d.created_at + '">' + d.created_at + '</time>' +
+          '</p>' +
+          '<p>' + state + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div id="all-results">' +
+    '<a href="https://github.com/search?q=author%3A' + d.user.login + '&type=pullrequests&s=created&o=asc" target="_blank">See every pull request</a> by <a href="' + d.user.html_url + '">' + d.user.login + '</a>' +
+  '</div>';
+}
+
+function renderMissing(login) {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden missing">' +
+      '<h2>It doesn\'t look like <a href="https://github.com/' + login + '">' + login + '</a> has sent a pull request yet.</h2>' +
+      '<p><strong>Need help sending your first pull request?</strong> Check out <a href="https://opensource.guide/how-to-contribute/">this handy guide.</a></p>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderError(login) {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden error">' +
+      '<h2><b>' + login + '</b> doesn\'t appear to be on GitHub at all.</h2>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderRequestError() {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden error">' +
+      '<h2>There\'s been a problem getting the information from <b>GitHub</b>. Please try again later.</h2>' +
+    '</div>' +
+  '</div>';
+}
+
+function loadData(login, cb){
+  if(login){
+    ga('send', 'event', 'login', 'search', login);
+    var searchURL = 'https://api.github.com/search/issues?q=type:pr+author:"'+login+'"+-user:"'+login+'"&sort=created&order=asc&per_page=1'
+    $.getJSON(searchURL, function(data){
+      if(data.items.length > 0){
+        $.getJSON(data.items[0].pull_request.url, function(data){
+          cb(data)
+        }).error(function () {
+          render(renderRequestError())
+          flappyBoard()
+        })
+      } else {
+        cb(null)
+      }
+    }).error(function(){
+      render(renderError(login))
+      flappyBoard()
+    })
+  }
+}
+
+function renderData(pullRequestData){
+  if(pullRequestData){
+    render(renderFound(pullRequestData))
+    if(typeof twttr !== 'undefined'){twttr.widgets.load()}
+    $('.moment-date').each(function (index, dateElem) {
+      var $dateElem = $(dateElem);
+      var time = new Date($dateElem.attr('datetime'));
+      var formatted = time.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit'});
+      $dateElem.attr('title', $dateElem.text() + " on " + formatted);
+      if($dateElem.hasClass('sent')){
+        $dateElem.attr('title', formatted);
+        $dateElem.text(timeAgo(time))
+      }
+    });
+  } else {
+    render(renderMissing(getLogin()))
+  }
+  flappyBoard()
+}
+
+function flappyBoard(){
+  $('#login').val(getLogin()).blur()
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      $('.result').removeClass('hidden').addClass('expanded')
+      setTimeout(function(){
+        $('.spinner').addClass('hide')
+      }, 500)
+    })
+  })
+}
+
+$(function() {
+  $(window).on('hashchange',function(){
+    loadData(getLogin(), renderData)
+  });
+  
+  $('#user-form').submit(function(){
+    $('.spinner').removeClass('hide')
+    window.location.hash = ''
+    // normalise in case the user pasted a full profile URL
+    window.location.hash = normaliseLogin($('#login')[0].value)
+    return false
+  })
+
+  loadData(getLogin(), renderData)
+});
