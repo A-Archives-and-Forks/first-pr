@@ -99,12 +99,10 @@ function renderData(pullRequestData){
 
 function flappyBoard(){
   $('#login').val(getLogin()).blur()
-  imagesLoaded( '.result', function() {
-    $('.result').removeClass('hidden').addClass('expanded')
-    setTimeout(function(){
-      $('.spinner').addClass('hide')
-    }, 500)
-  })
+  $('.result').removeClass('hidden').addClass('expanded')
+  setTimeout(function(){
+    $('.spinner').addClass('hide')
+  }, 500)
 }
 
 $(function() {
