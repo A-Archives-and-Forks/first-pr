@@ -40,19 +40,71 @@ function normaliseLogin(input) {
   return m ? m[1] : input;
 }
 
-var missingTemplate = $('#missing-template').html();
-var foundTemplate = $('#found-template').html();
-var errorTemplate = $('#error-template').html();
-var requestErrorTemplate = $('#request-error-template').html();
 var main = $('#main');
-Mustache.parse(foundTemplate);
-Mustache.parse(errorTemplate);
-Mustache.parse(requestErrorTemplate);
-Mustache.parse(missingTemplate);
 
-function render(template, params) {
-  main.html(Mustache.render(template, params))
+function render(html) {
+  main.html(html)
   emojify.run($('#title')[0])
+}
+
+function renderFound(d) {
+  var state;
+  if (d.merged) {
+    state = '<time class="state merged moment-date" datetime="' + d.merged_at + '" is="relative-time" title="' + d.merged_at + '">Merged</time>';
+  } else if (d.closed_at) {
+    state = '<time class="state closed moment-date" datetime="' + d.closed_at + '" is="relative-time" title="' + d.closed_at + '">Closed</time>';
+  } else {
+    state = '<span class="state open">Open</span>';
+  }
+
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden found cf">' +
+      '<h2 id="pr-title">' +
+        '<a href="' + d.html_url + '" id="title" target="_blank">' + d.title + '</a> <span class="pr-number">#' + d.number + '</span><br>' +
+        '<small>to <a href="' + d.base.repo.html_url + '" target="_blank">' + d.base.repo.full_name + '</a></small>' +
+      '</h2>' +
+      '<div class="user-media">' +
+        '<a class="avatar" href="' + d.user.html_url + '" target="_blank">' +
+          '<img src="' + d.user.avatar_url + '" width="48" height="48" />' +
+        '</a>' +
+        '<div class="pr-dates">' +
+          '<p class="sent-on">' +
+            '<a href="' + d.user.html_url + '">' + d.user.login + '</a> sent this pull request ' +
+            '<time class="moment-date sent" datetime="' + d.created_at + '" is="relative-time" title="' + d.created_at + '">' + d.created_at + '</time>' +
+          '</p>' +
+          '<p>' + state + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div id="all-results">' +
+    '<a href="https://github.com/search?q=author%3A' + d.user.login + '&type=pullrequests&s=created&o=asc" target="_blank">See every pull request</a> by <a href="' + d.user.html_url + '">' + d.user.login + '</a>' +
+  '</div>';
+}
+
+function renderMissing(login) {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden missing">' +
+      '<h2>It doesn\'t look like <a href="https://github.com/' + login + '">' + login + '</a> has sent a pull request yet.</h2>' +
+      '<p><strong>Need help sending your first pull request?</strong> Check out <a href="https://opensource.guide/how-to-contribute/">this handy guide.</a></p>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderError(login) {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden error">' +
+      '<h2><b>' + login + '</b> doesn\'t appear to be on GitHub at all.</h2>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderRequestError() {
+  return '<div class="results-wrapper">' +
+    '<div class="result hidden error">' +
+      '<h2>There\'s been a problem getting the information from <b>GitHub</b>. Please try again later.</h2>' +
+    '</div>' +
+  '</div>';
 }
 
 function loadData(login, cb){
@@ -64,14 +116,14 @@ function loadData(login, cb){
         $.getJSON(data.items[0].pull_request.url, function(data){
           cb(data)
         }).error(function () {
-          render(requestErrorTemplate)
+          render(renderRequestError())
           flappyBoard()
         })
       } else {
         cb(null)
       }
     }).error(function(){
-      render(errorTemplate, {login: login})
+      render(renderError(login))
       flappyBoard()
     })
   }
@@ -79,7 +131,7 @@ function loadData(login, cb){
 
 function renderData(pullRequestData){
   if(pullRequestData){
-    render(foundTemplate, pullRequestData)
+    render(renderFound(pullRequestData))
     if(typeof twttr !== 'undefined'){twttr.widgets.load()}
     $('.moment-date').each(function (index, dateElem) {
       var $dateElem = $(dateElem);
@@ -92,17 +144,21 @@ function renderData(pullRequestData){
       }
     });
   } else {
-    render(missingTemplate, {login: getLogin()})
+    render(renderMissing(getLogin()))
   }
   flappyBoard()
 }
 
 function flappyBoard(){
   $('#login').val(getLogin()).blur()
-  $('.result').removeClass('hidden').addClass('expanded')
-  setTimeout(function(){
-    $('.spinner').addClass('hide')
-  }, 500)
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      $('.result').removeClass('hidden').addClass('expanded')
+      setTimeout(function(){
+        $('.spinner').addClass('hide')
+      }, 500)
+    })
+  })
 }
 
 $(function() {
