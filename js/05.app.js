@@ -1,3 +1,21 @@
+function timeAgo(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+  var rtf = new Intl.RelativeTimeFormat('en', {numeric: 'auto'});
+  var intervals = [
+    {unit: 'year', seconds: 31536000},
+    {unit: 'month', seconds: 2592000},
+    {unit: 'day', seconds: 86400},
+    {unit: 'hour', seconds: 3600},
+    {unit: 'minute', seconds: 60},
+    {unit: 'second', seconds: 1}
+  ];
+  for (var i = 0; i < intervals.length; i++) {
+    var count = Math.floor(seconds / intervals[i].seconds);
+    if (count >= 1) return rtf.format(-count, intervals[i].unit);
+  }
+  return rtf.format(0, 'second');
+}
+
 function getLogin(){
   return normaliseLogin(window.location.hash.slice(1));
 }
@@ -54,11 +72,12 @@ function renderData(pullRequestData){
     if(typeof twttr !== 'undefined'){twttr.widgets.load()}
     $('.moment-date').each(function (index, dateElem) {
       var $dateElem = $(dateElem);
-      var time = moment( $dateElem.attr('datetime') )
-      $dateElem.attr('title', $dateElem.text() + " on " + time.format('MMMM Do YYYY, h:mm a'));
+      var time = new Date($dateElem.attr('datetime'));
+      var formatted = time.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit'});
+      $dateElem.attr('title', $dateElem.text() + " on " + formatted);
       if($dateElem.hasClass('sent')){
-        $dateElem.attr('title', time.format('MMMM Do YYYY, h:mm a'));
-        $dateElem.text(time.fromNow())
+        $dateElem.attr('title', formatted);
+        $dateElem.text(timeAgo(time))
       }
     });
   } else {
